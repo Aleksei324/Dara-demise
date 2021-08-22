@@ -2,9 +2,10 @@ extends Area2D
 
 
 # Declare member variables here.
-var velocidad = 500
 var movimiento_acumulado
-var orientacion = "adelante"
+var orientacion_movimiento = "adelante_walk"
+var orientacion_estatico = "adelante"
+var velocidad = 500
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,31 +22,34 @@ func _process(delta):
 	# detecta pulsaciones de teclas
 	if Input.is_action_pressed("ui_right"):
 		movimiento_acumulado.x += 1
-		$AnimatedSprite.animation = "derecha_walk"
-		orientacion = "derecha"
+		orientacion_movimiento = "derecha_walk"
+		orientacion_estatico = "derecha"
 
 	if Input.is_action_pressed("ui_left"):
 		movimiento_acumulado.x -= 1
-		$AnimatedSprite.animation = "izquierda_walk"
-		orientacion = "izquierda"
+		orientacion_movimiento = "izquierda_walk"
+		orientacion_estatico = "izquierda"
 
 	if Input.is_action_pressed("ui_down"):
 		movimiento_acumulado.y += 1
-		$AnimatedSprite.animation = "adelante_walk"
-		orientacion = "adelante"
+		orientacion_movimiento = "adelante_walk"
+		orientacion_estatico = "adelante"
 
 	if Input.is_action_pressed("ui_up"):
 		movimiento_acumulado.y -= 1
-		$AnimatedSprite.animation = "detras_walk"
-		orientacion = "detras"
+		orientacion_movimiento = "detras_walk"
+		orientacion_estatico = "detras"
 
 	# si hay movimiento acumulado entonces le da una velocidad determinada
 	# lo limita si es necesario
 	if movimiento_acumulado.length_squared() > 0:
 		movimiento_acumulado = movimiento_acumulado.normalized() * velocidad
-	else:
-		$AnimatedSprite.animation = orientacion
+		$AnimatedSprite.animation = orientacion_movimiento
 
+	else:
+		$AnimatedSprite.animation = orientacion_estatico
+
+	# moverse
 	position += movimiento_acumulado * delta
 	
 	# limita hasta que pixeles puedes moverte
