@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dara_left.png-3dace4ab05b9a7afc09155c5f4f72c4f.stex"
+path="res://.import/Dara_front_beta.png-0a267a4f29730f3f21e1658deecf1711.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Dara_left.png"
-dest_files=[ "res://.import/Dara_left.png-3dace4ab05b9a7afc09155c5f4f72c4f.stex" ]
+source_file="res://Sprites/Beta/Dara_front_beta.png"
+dest_files=[ "res://.import/Dara_front_beta.png-0a267a4f29730f3f21e1658deecf1711.stex" ]
 
 [params]
 

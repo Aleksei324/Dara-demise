@@ -1,4 +1,19 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Kenney Rocket Square.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Button_salir.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -6,3 +21,55 @@ anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.392
+anchor_right = 0.5
+anchor_bottom = 0.392
+margin_left = -388.086
+margin_top = -44.0218
+margin_right = 390.914
+margin_bottom = 43.9782
+custom_fonts/font = SubResource( 1 )
+text = "Dara's demise"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Button_jugar" type="Button" parent="CanvasLayer2"]
+anchor_left = 0.395
+anchor_top = 0.502
+anchor_right = 0.395
+anchor_bottom = 0.502
+margin_left = -130.845
+margin_top = -34.5258
+margin_right = 131.155
+margin_bottom = 34.4742
+custom_fonts/font = SubResource( 2 )
+text = "JUGAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_salir" type="Button" parent="CanvasLayer2"]
+anchor_left = 0.595
+anchor_top = 0.5
+anchor_right = 0.595
+anchor_bottom = 0.5
+margin_left = -119.046
+margin_top = -33.1651
+margin_right = 117.954
+margin_bottom = 35.8349
+custom_fonts/font = SubResource( 3 )
+text = "SALIR"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="CanvasLayer2/Button_salir" to="CanvasLayer2/Button_salir" method="_on_Button_salir_button_up"]

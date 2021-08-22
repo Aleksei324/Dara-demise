@@ -20,11 +20,11 @@ func _process(delta):
 	# detecta pulsaciones de teclas
 	if Input.is_action_pressed("ui_right"):
 		movimiento_acumulado.x += 1
-		$AnimatedSprite.animation = "derecha"
+		$AnimatedSprite.animation = "derecha_walk"
 
 	if Input.is_action_pressed("ui_left"):
 		movimiento_acumulado.x -= 1
-		$AnimatedSprite.animation = "izquierda"
+		$AnimatedSprite.animation = "izquierda_walk"
 
 	if Input.is_action_pressed("ui_down"):
 		movimiento_acumulado.y += 1
@@ -32,7 +32,7 @@ func _process(delta):
 
 	if Input.is_action_pressed("ui_up"):
 		movimiento_acumulado.y -= 1
-		$AnimatedSprite.animation = "atras"
+		$AnimatedSprite.animation = "detras"
 
 	# si hay movimiento acumulado entonces le da una velocidad determinada
 	# lo limita si es necesario
