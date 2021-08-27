@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dara_derecha_walk.png-c1ab55df2813cc3840e4b9ceb8890c8b.stex"
+path="res://.import/Dara_derecha_walk.png-7016e13b42fe44d3cb8571a6d148b9af.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Dara_derecha_walk.png"
-dest_files=[ "res://.import/Dara_derecha_walk.png-c1ab55df2813cc3840e4b9ceb8890c8b.stex" ]
+source_file="res://Sprites/Player/Dara_derecha_walk.png"
+dest_files=[ "res://.import/Dara_derecha_walk.png-7016e13b42fe44d3cb8571a6d148b9af.stex" ]
 
 [params]
 
