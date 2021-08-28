@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Fonts/Kenney Rocket Square.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Button_salir.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Sounds/Kenney_button_press.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Fonts/Saves/Titulo_menu.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Scripts/Button_creditos.gd" type="Script" id=6]
+[ext_resource path="res://Sounds/Music/inspired-by-kevin-macleod-from-filmmusic-io.mp3" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -29,6 +30,7 @@ __meta__ = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -77,6 +79,7 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/Button_jugar"]
 stream = ExtResource( 4 )
+volume_db = -10.0
 
 [node name="Button_creditos" type="Button" parent="VBoxContainer"]
 margin_top = 252.0
@@ -91,6 +94,7 @@ script = ExtResource( 6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/Button_creditos"]
 stream = ExtResource( 4 )
+volume_db = -10.0
 
 [node name="Button_salir" type="Button" parent="VBoxContainer"]
 margin_top = 350.0

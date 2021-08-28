@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Fonts/Kenney Rocket.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Textbox.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/Saves/Textbox.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Sounds/Kenney_button_press.ogg" type="AudioStream" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.901961, 0, 1, 0.784314 )
@@ -23,6 +24,10 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
 
 [node name="Tween" type="Tween" parent="."]
 

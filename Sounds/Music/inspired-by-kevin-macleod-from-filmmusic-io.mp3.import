@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/inspired-by-kevin-macleod-from-filmmusic-io.mp3-58da0bc14e59592c90e4fa405f3f7949.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/inspired-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/inspired-by-kevin-macleod-from-filmmusic-io.mp3-58da0bc14e59592c90e4fa405f3f7949.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

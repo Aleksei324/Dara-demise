@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lightless-dawn-by-kevin-macleod-from-filmmusic-io.mp3-d5296ef93400bb7e54686fd4414dc0bc.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/lightless-dawn-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/lightless-dawn-by-kevin-macleod-from-filmmusic-io.mp3-d5296ef93400bb7e54686fd4414dc0bc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

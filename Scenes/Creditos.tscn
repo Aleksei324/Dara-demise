@@ -71,5 +71,6 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button_regresar"]
 stream = ExtResource( 3 )
+volume_db = -10.0
 
 [connection signal="button_up" from="Button_regresar" to="Button_regresar" method="_on_Button_regresar_button_up"]

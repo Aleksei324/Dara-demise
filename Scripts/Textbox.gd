@@ -19,6 +19,7 @@ func _ready():
 func _process(delta):
 	# si se presiona la tecla z entonces continua con el siguiente dialogo
 	if Input.is_action_just_pressed("zed") and tween_finalizado:
+		$AudioStreamPlayer.play()
 		run_textbox()
 
 
