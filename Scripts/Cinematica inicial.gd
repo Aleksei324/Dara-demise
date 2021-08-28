@@ -9,9 +9,13 @@ func _ready():
 	$Textbox.queue_text("Texto de la cinematica 1")
 	$Textbox.queue_text("Texto de la cinematica 2")
 	$Textbox.queue_text("Texto de la cinematica 3")
+	$Timer.start()
+
+
+func _process(delta):
+	if $Textbox.acabado:
+		get_tree().change_scene("res://Scenes/Vagones/Vagon1.tscn")
+
+
+func _on_Timer_timeout():
 	$Textbox.run_textbox()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

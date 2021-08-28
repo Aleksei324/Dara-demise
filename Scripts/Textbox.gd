@@ -5,7 +5,8 @@ extends Control
 onready var textbox_container = $MarginContainer
 onready var textbox_text = $MarginContainer/Panel/MarginContainer2/VBoxContainer/Text_label
 const READ_RATE = 0.05
-var tween_finalizado = false
+var tween_finalizado = false # controla que se pueda seguir al siguiente parrafo
+var acabado = false # controla que no haya más textbox
 var texto_queue = []
 var texto_actual = ""
 
@@ -31,7 +32,9 @@ func run_textbox():
 	
 	if texto_queue.empty():
 		textbox_container.hide()
+		acabado = true
 	else:
+		acabado = false
 		textbox_container.show()
 		texto_actual = texto_queue.pop_front()
 		

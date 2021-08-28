@@ -49,5 +49,5 @@ func _physics_process(delta):
 	# position += movimiento_acumulado * delta # alternativa sin fisicas
 	
 	# limita hasta que pixeles puedes moverte
-	# position.x = clamp(position.x, 20, 2540)
-	# position.y = clamp(position.y, 150, 1730)
+	global_position.x = clamp(global_position.x, 20, 2520)
+	global_position.y = clamp(global_position.y, 150, 1650)
