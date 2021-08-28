@@ -1,23 +1,28 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scripts/Button_regresar.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Saves/Titulo_menu.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Scripts/Button_quitar_pausa.gd" type="Script" id=3]
 [ext_resource path="res://Sounds/Kenney_button_press.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Scripts/Pausa.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.901961, 0, 1, 0.0784314 )
+bg_color = Color( 0.901961, 0, 1, 0.196078 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
 [node name="Pausa" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Audio_boton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
 
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
@@ -48,14 +53,9 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_hover = Color( 0.901961, 0, 1, 1 )
 text = "Continuar"
 flat = true
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/Button_continuar"]
-stream = ExtResource( 4 )
-volume_db = -10.0
 
 [node name="Button_regresa" type="Button" parent="VBoxContainer"]
 margin_top = 98.0
@@ -66,14 +66,9 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_hover = Color( 0.901961, 0, 1, 1 )
 text = "Salir"
 flat = true
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/Button_regresa"]
-stream = ExtResource( 4 )
-volume_db = -10.0
-
-[connection signal="button_up" from="VBoxContainer/Button_continuar" to="VBoxContainer/Button_continuar" method="_on_Button_continuar_button_up"]
-[connection signal="button_up" from="VBoxContainer/Button_regresa" to="VBoxContainer/Button_regresa" method="_on_Button_regresar_button_up"]
+[connection signal="button_up" from="VBoxContainer/Button_continuar" to="." method="_on_Button_continuar_button_up"]
+[connection signal="button_up" from="VBoxContainer/Button_regresa" to="." method="_on_Button_regresa_button_up"]

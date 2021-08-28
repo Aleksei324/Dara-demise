@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Fonts/Kenney Rocket Square.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Scripts/Button_salir.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/Button_jugar.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Creditos.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sounds/Kenney_button_press.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Fonts/Saves/Titulo_menu.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Scripts/Button_creditos.gd" type="Script" id=6]
 [ext_resource path="res://Sounds/Music/inspired-by-kevin-macleod-from-filmmusic-io.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Scripts/Titulo.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -25,6 +24,7 @@ focus_neighbour_left = NodePath("VBoxContainer/HBoxContainer")
 focus_neighbour_top = NodePath("VBoxContainer/HBoxContainer")
 focus_neighbour_right = NodePath("VBoxContainer/HBoxContainer")
 focus_neighbour_bottom = NodePath("VBoxContainer/HBoxContainer")
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -33,9 +33,13 @@ __meta__ = {
 stream = ExtResource( 7 )
 autoplay = true
 
+[node name="Audio_boton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -72,14 +76,9 @@ custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_hover = Color( 0.901961, 0, 1, 1 )
 text = "empezar"
 flat = true
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/Button_jugar"]
-stream = ExtResource( 4 )
-volume_db = -10.0
 
 [node name="Button_creditos" type="Button" parent="VBoxContainer"]
 margin_top = 252.0
@@ -90,11 +89,6 @@ custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_hover = Color( 0.901961, 0, 1, 1 )
 text = "Creditos"
 flat = true
-script = ExtResource( 6 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/Button_creditos"]
-stream = ExtResource( 4 )
-volume_db = -10.0
 
 [node name="Button_salir" type="Button" parent="VBoxContainer"]
 margin_top = 350.0
@@ -105,11 +99,14 @@ custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_hover = Color( 0.901961, 0, 1, 1 )
 text = "SALIR"
 flat = true
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="button_up" from="VBoxContainer/Button_jugar" to="VBoxContainer/Button_jugar" method="_on_Button_jugar_button_up"]
-[connection signal="button_up" from="VBoxContainer/Button_creditos" to="VBoxContainer/Button_creditos" method="_on_Button_creditos_button_up"]
-[connection signal="button_up" from="VBoxContainer/Button_salir" to="VBoxContainer/Button_salir" method="_on_Button_salir_button_up"]
+[node name="Creditos" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[connection signal="button_up" from="VBoxContainer/Button_jugar" to="." method="_on_Button_jugar_button_up"]
+[connection signal="button_up" from="VBoxContainer/Button_creditos" to="." method="_on_Button_creditos_button_up"]
+[connection signal="button_up" from="VBoxContainer/Button_salir" to="." method="_on_Button_salir_button_up"]
+[connection signal="visibility_changed" from="Creditos" to="." method="_on_Creditos_visibility_changed"]

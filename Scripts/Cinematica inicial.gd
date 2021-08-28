@@ -9,6 +9,8 @@ func _ready():
 	$Textbox.queue_text("Texto de la cinematica 1")
 	$Textbox.queue_text("Texto de la cinematica 2")
 	$Textbox.queue_text("Texto de la cinematica 3")
+	$Textbox.queue_text("Texto de la cinematica 4")
+	$Textbox.queue_text("Texto de la cinematica 5")
 	$Timer.start()
 
 
