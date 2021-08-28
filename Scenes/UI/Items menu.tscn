@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Items menu.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Kenney Rocket.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/UI/Vagon minimapa.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.901961, 0, 1, 0.784314 )
+
+[node name="Items menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+vagon = ExtResource( 3 )
+
+[node name="MarginContainer_minimapa" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_left = 70.0
+margin_top = 40.0
+margin_right = -70.0
+margin_bottom = 210.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer_minimapa"]
+margin_right = 1780.0
+margin_bottom = 170.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer_minimapa/VBoxContainer"]
+margin_right = 1780.0
+margin_bottom = 103.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer_minimapa/VBoxContainer"]
+margin_top = 107.0
+margin_right = 1780.0
+margin_bottom = 170.0
+custom_fonts/font = SubResource( 2 )
+text = "5 vagones"
+align = 1
+valign = 1
+
+[node name="MarginContainer_items" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -590.0
+margin_top = -330.0
+margin_right = -50.0
+margin_bottom = -50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="MarginContainer_items"]
+margin_right = 540.0
+margin_bottom = 280.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer_items/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer_items/Panel/GridContainer"]
+margin_right = 268.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer_items/Panel/GridContainer"]
+margin_left = 272.0
+margin_right = 540.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer_items/Panel/GridContainer"]
+margin_top = 142.0
+margin_right = 268.0
+margin_bottom = 280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton4" type="TextureButton" parent="MarginContainer_items/Panel/GridContainer"]
+margin_left = 272.0
+margin_top = 142.0
+margin_right = 540.0
+margin_bottom = 280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

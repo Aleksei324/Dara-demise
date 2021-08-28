@@ -5,6 +5,7 @@ extends Node2D
 onready var player = $Jugador/KinematicBody2D
 onready var camera = $"Camera and UI/Camera2D"
 onready var ui = $"Camera and UI/CanvasLayer"
+onready var minimapa = $"Camera and UI/CanvasLayer/Items menu/MarginContainer_minimapa/VBoxContainer/HBoxContainer"
 
 
 func _ready():
