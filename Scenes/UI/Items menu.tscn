@@ -4,11 +4,11 @@
 [ext_resource path="res://Fonts/Kenney Rocket.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scenes/UI/Vagon minimapa.tscn" type="PackedScene" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.901961, 0, 1, 0.784314 )
 
 [node name="Items menu" type="Control"]
@@ -37,17 +37,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer_minimapa/VBoxContainer"]
+[node name="HBoxContainer_vagones" type="HBoxContainer" parent="MarginContainer_minimapa/VBoxContainer"]
 margin_right = 1780.0
 margin_bottom = 103.0
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer_minimapa/VBoxContainer"]
+[node name="Label_total_vagones" type="Label" parent="MarginContainer_minimapa/VBoxContainer"]
 margin_top = 107.0
 margin_right = 1780.0
 margin_bottom = 170.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "5 vagones"
 align = 1
 valign = 1
@@ -65,12 +65,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="MarginContainer_items"]
+[node name="Panel_items" type="Panel" parent="MarginContainer_items"]
 margin_right = 540.0
 margin_bottom = 280.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 2 )
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer_items/Panel"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer_items/Panel_items"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 columns = 2
@@ -78,27 +78,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer_items/Panel/GridContainer"]
+[node name="TextureButton" type="TextureButton" parent="MarginContainer_items/Panel_items/GridContainer"]
 margin_right = 268.0
 margin_bottom = 138.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureButton2" type="TextureButton" parent="MarginContainer_items/Panel/GridContainer"]
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer_items/Panel_items/GridContainer"]
 margin_left = 272.0
 margin_right = 540.0
 margin_bottom = 138.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureButton3" type="TextureButton" parent="MarginContainer_items/Panel/GridContainer"]
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer_items/Panel_items/GridContainer"]
 margin_top = 142.0
 margin_right = 268.0
 margin_bottom = 280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureButton4" type="TextureButton" parent="MarginContainer_items/Panel/GridContainer"]
+[node name="TextureButton4" type="TextureButton" parent="MarginContainer_items/Panel_items/GridContainer"]
 margin_left = 272.0
 margin_top = 142.0
 margin_right = 540.0

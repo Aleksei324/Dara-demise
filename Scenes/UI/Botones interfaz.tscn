@@ -24,22 +24,22 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-margin_right = 328.0
+margin_right = 325.0
 margin_bottom = 160.0
 alignment = 1
 
-[node name="TextureRectZ" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-margin_left = 10.0
-margin_right = 170.0
+[node name="imagen_z" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+margin_left = 8.0
+margin_right = 168.0
 margin_bottom = 160.0
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRectX" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-margin_left = 174.0
-margin_right = 318.0
+[node name="imagen_x" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+margin_left = 172.0
+margin_right = 316.0
 margin_bottom = 160.0
 texture = ExtResource( 2 )
 __meta__ = {

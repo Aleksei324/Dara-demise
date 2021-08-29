@@ -4,14 +4,10 @@ extends Node2D
 # Declare member variables here.
 onready var player = $Jugador/KinematicBody2D
 onready var camera = $"Camera and UI/Camera2D"
-onready var ui = $"Camera and UI/CanvasLayer"
-onready var minimapa = $"Camera and UI/CanvasLayer/Items menu/MarginContainer_minimapa/VBoxContainer/HBoxContainer"
-
-
-func _ready():
-	$"Camera and UI".set_position(player.get_position())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# esta constantemente moviendo la camara a la posición del jugador
+	# usa la posición global ya que la camara y el jugador tienen (0,0) en sitios distintos
 	camera.set_position(player.get_global_position())

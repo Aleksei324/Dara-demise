@@ -15,12 +15,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel_fondo" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )

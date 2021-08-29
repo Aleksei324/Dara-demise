@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Creditos.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/Saves/Titulo_menu.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Fonts/Saves/Textbox.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Fonts/Saves/Titulo_menu_fuente.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/Saves/Textbox_fuente.tres" type="DynamicFont" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -15,14 +15,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect_fondo" type="TextureRect" parent="."]
+[node name="imagen_fondo" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect_icono" type="TextureRect" parent="."]
+[node name="imagen_dara" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -50.0
@@ -35,7 +35,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="Label_texto" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

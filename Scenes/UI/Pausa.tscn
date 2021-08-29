@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Fonts/Saves/Titulo_menu.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/Saves/Titulo_menu_fuente.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Sounds/Kenney_button_press.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Scripts/Pausa.gd" type="Script" id=5]
 
@@ -24,7 +24,7 @@ __meta__ = {
 stream = ExtResource( 4 )
 volume_db = -10.0
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel_transparente" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )

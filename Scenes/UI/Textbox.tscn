@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Fonts/Kenney Rocket.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Textbox.gd" type="Script" id=2]
-[ext_resource path="res://Fonts/Saves/Textbox.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Fonts/Saves/Textbox_fuente.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Sounds/Kenney_button_press.ogg" type="AudioStream" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -25,7 +25,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Audio_avanzar_texto" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0
 
@@ -49,7 +49,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel"]
+[node name="MarginContainer_texto" type="MarginContainer" parent="MarginContainer/Panel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -62,17 +62,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer_texto"]
 margin_right = 1040.0
 margin_bottom = 160.0
 
-[node name="Name_label" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+[node name="Name_label" type="Label" parent="MarginContainer/Panel/MarginContainer_texto/VBoxContainer"]
 margin_right = 1040.0
 margin_bottom = 38.0
 custom_fonts/font = SubResource( 2 )
 text = "Dara"
 
-[node name="Text_label" type="Label" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+[node name="Text_label" type="Label" parent="MarginContainer/Panel/MarginContainer_texto/VBoxContainer"]
 margin_top = 42.0
 margin_right = 1040.0
 margin_bottom = 160.0
