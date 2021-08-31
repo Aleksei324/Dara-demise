@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Kenney_alarm.ogg-3b74ba6e4434e75ae5b58fa0f2523286.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Kenney_alarm.ogg"
+dest_files=[ "res://.import/Kenney_alarm.ogg-3b74ba6e4434e75ae5b58fa0f2523286.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/tiles_vagon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Saves/Cosmic_Lilac_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/UI/Camera and UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Personajes y enemigos/Jugador.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/VagonX.gd" type="Script" id=5]
 [ext_resource path="res://Sounds/Music/lightless-dawn-by-kevin-macleod-from-filmmusic-io.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/Personajes y enemigos/Camara vigilancia.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sounds/Kenney_level_finished.ogg" type="AudioStream" id=8]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 47.1738
+height = 150.101
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
@@ -13,6 +19,9 @@ script = ExtResource( 5 )
 [node name="Audio_fondo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
+
+[node name="Audio_level_finished" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 
 [node name="tiles_vagon" parent="." instance=ExtResource( 1 )]
 
@@ -22,6 +31,21 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
+[node name="Area2D_win_place" type="Area2D" parent="."]
+position = Vector2( 2516.34, 935.889 )
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_win_place"]
+shape = SubResource( 1 )
+
+[node name="Camara vigilancia" parent="." instance=ExtResource( 7 )]
+position = Vector2( 774.457, 799.224 )
+
 [node name="Jugador" parent="." instance=ExtResource( 4 )]
 
 [node name="Camera and UI" parent="." instance=ExtResource( 3 )]
+
+[connection signal="body_entered" from="Area2D_win_place" to="." method="_on_Area2D_win_place_body_entered"]

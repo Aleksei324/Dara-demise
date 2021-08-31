@@ -3,8 +3,9 @@
 [ext_resource path="res://Sprites/Saves/Jugador.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scripts/Jugador.gd" type="Script" id=5]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 29.7275
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 23.6109
+height = 24.5807
 
 [node name="Jugador" type="Node2D"]
 position = Vector2( 65, 725 )
@@ -14,14 +15,15 @@ __meta__ = {
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
+collision_mask = 10
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = ExtResource( 1 )
 animation = "derecha"
-frame = 10
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 0, 119.82 )
+position = Vector2( -5.29733, 102.869 )
 shape = SubResource( 1 )

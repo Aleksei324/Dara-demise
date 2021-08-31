@@ -1,3 +1,41 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource path="res://Scripts/Camara vigilancia.gd" type="Script" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 25.6147
+
+[node name="Camara vigilancia" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="StaticBody2D"]
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Area2D_detection_area" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="Polygon2D_cuerpo" type="Polygon2D" parent="Area2D_detection_area"]
+color = Color( 1, 1, 1, 0.196078 )
+polygon = PoolVector2Array( 0.0864544, -5.21137, 201.568, -606.945, -198.457, -606.945 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D_detection_area"]
+polygon = PoolVector2Array( -0.0316162, -37.068, 187.282, -594.246, -182.583, -595.833 )
+
+[connection signal="body_entered" from="Area2D_detection_area" to="." method="_on_Area2D_detection_area_body_entered"]
