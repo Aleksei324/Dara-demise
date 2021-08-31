@@ -14,6 +14,10 @@ config/name="Dara's demise"
 run/main_scene="res://Scenes/Titulo.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global_variables="*res://Scripts/Global.gd"
+
 [display]
 
 window/size/width=1920

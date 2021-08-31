@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_minimap.png-8c6ee2d03296457f25135c9bf4da82bb.stex"
+path="res://.import/Taser.png-58b639845cbf7053c7228f78b0bc9baa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Interfaz/icon_minimap.png"
-dest_files=[ "res://.import/icon_minimap.png-8c6ee2d03296457f25135c9bf4da82bb.stex" ]
+source_file="res://Sprites/Interfaz/Taser.png"
+dest_files=[ "res://.import/Taser.png-58b639845cbf7053c7228f78b0bc9baa.stex" ]
 
 [params]
 

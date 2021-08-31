@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Jugador.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 23.6109
+radius = 29.9675
 height = 24.5807
 
 [node name="Jugador" type="Node2D"]
@@ -21,7 +21,7 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = ExtResource( 1 )
 animation = "derecha"
-frame = 4
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]

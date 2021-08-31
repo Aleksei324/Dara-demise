@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_minimap.png-8c6ee2d03296457f25135c9bf4da82bb.stex"
+path="res://.import/laser_off.png-d60e6535420be6169fe86d6cc67a694a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Interfaz/icon_minimap.png"
-dest_files=[ "res://.import/icon_minimap.png-8c6ee2d03296457f25135c9bf4da82bb.stex" ]
+source_file="res://Sprites/Enemies/laser_off.png"
+dest_files=[ "res://.import/laser_off.png-d60e6535420be6169fe86d6cc67a694a.stex" ]
 
 [params]
 

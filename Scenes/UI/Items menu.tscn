@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Items menu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Kenney Rocket.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scenes/UI/Vagon minimapa.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fonts/Saves/Textbox_fuente.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Sprites/Interfaz/z_button.png" type="Texture" id=5]
+[ext_resource path="res://Sounds/Kenney_button_press.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sprites/Interfaz/Taser.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Interfaz/Taser_resaltado.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -19,6 +24,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 vagon = ExtResource( 3 )
+
+[node name="Audio_button" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
 
 [node name="MarginContainer_minimapa" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -57,51 +66,69 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -590.0
-margin_top = -330.0
+margin_left = -830.0
+margin_top = -290.0
 margin_right = -50.0
 margin_bottom = -50.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel_items" type="Panel" parent="MarginContainer_items"]
-margin_right = 540.0
-margin_bottom = 280.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer_items"]
+margin_right = 780.0
+margin_bottom = 240.0
+
+[node name="Label_item" type="Label" parent="MarginContainer_items/VBoxContainer"]
+margin_right = 780.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 4 )
+text = "Taser"
+align = 2
+
+[node name="Panel_items" type="Panel" parent="MarginContainer_items/VBoxContainer"]
+margin_top = 54.0
+margin_right = 780.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 2 )
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer_items/Panel_items"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer_items/VBoxContainer/Panel_items"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-columns = 2
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer_items/Panel_items/GridContainer"]
-margin_right = 268.0
-margin_bottom = 138.0
+[node name="TextureButton_taser" type="TextureButton" parent="MarginContainer_items/VBoxContainer/Panel_items/HBoxContainer"]
+margin_right = 257.0
+margin_bottom = 186.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture_normal = ExtResource( 7 )
+texture_focused = ExtResource( 8 )
+expand = true
+stretch_mode = 5
 
-[node name="TextureButton2" type="TextureButton" parent="MarginContainer_items/Panel_items/GridContainer"]
-margin_left = 272.0
-margin_right = 540.0
-margin_bottom = 138.0
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer_items/VBoxContainer/Panel_items/HBoxContainer"]
+margin_left = 261.0
+margin_right = 518.0
+margin_bottom = 186.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
 
-[node name="TextureButton3" type="TextureButton" parent="MarginContainer_items/Panel_items/GridContainer"]
-margin_top = 142.0
-margin_right = 268.0
-margin_bottom = 280.0
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer_items/VBoxContainer/Panel_items/HBoxContainer"]
+margin_left = 522.0
+margin_right = 780.0
+margin_bottom = 186.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
 
-[node name="TextureButton4" type="TextureButton" parent="MarginContainer_items/Panel_items/GridContainer"]
-margin_left = 272.0
-margin_top = 142.0
-margin_right = 540.0
-margin_bottom = 280.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[connection signal="button_up" from="MarginContainer_items/VBoxContainer/Panel_items/HBoxContainer/TextureButton_taser" to="." method="_on_TextureButton_taser_button_up"]
