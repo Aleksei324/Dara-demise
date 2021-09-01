@@ -35,6 +35,19 @@ func _physics_process(delta):
 		orientacion_movimiento = "izquierda_walk"
 		orientacion_estatico = "izquierda"
 
+	# si se presiona Z, no hay menus activos y queda municion
+	if Input.is_action_just_pressed("zed") and (
+			not Global_variables.textbox_activo and
+			not Global_variables.items_menu_activo and 
+			Global_variables.municion > 0):
+
+		# dependiendo del item seleccionado hace algo
+		if Global_variables.gun_mode == 0:
+			Global_variables.taser_activado = true
+
+		elif Global_variables.gun_mode == 1:
+			Global_variables.controller_activado = true
+
 	# si hay movimiento acumulado entonces le da una velocidad determinada
 	# lo limita si es necesario. Aplica el sprite
 	if movimiento_acumulado.length_squared() > 0:

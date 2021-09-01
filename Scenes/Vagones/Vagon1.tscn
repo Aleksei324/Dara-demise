@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/tiles_vagon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Saves/Cosmic_Lilac_tileset.tres" type="TileSet" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://Scenes/Personajes y enemigos/Camara vigilancia.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Sounds/Kenney_level_finished.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/Personajes y enemigos/Puerta con laseres.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Personajes y enemigos/Dron.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sounds/Kenney_gun.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Scripts/Area2D_win_place/Area2D_win_place_vagon1.gd" type="Script" id=12]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 47.1738
@@ -19,10 +22,15 @@ script = ExtResource( 5 )
 
 [node name="Audio_fondo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-autoplay = true
+volume_db = -10.0
+
+[node name="Audio_habilidad_activa" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -10.0
 
 [node name="Audio_level_finished" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -10.0
 
 [node name="tiles_vagon" parent="." instance=ExtResource( 1 )]
 
@@ -33,26 +41,57 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 2
 collision_mask = 3
 format = 1
-tile_data = PoolIntArray( 589846, 1, 0, 655382, 1, 0, 851990, 1, 0, 917526, 1, 0, 983062, 2, 0 )
+tile_data = PoolIntArray( 262162, 3, 0, 262163, 3, 0, 327698, 2, 0, 327699, 2, 0, 589836, 3, 0, 655371, 3, 0, 655372, 2, 0, 655382, 3, 0, 655400, 3, 0, 655401, 3, 0, 720907, 3, 0, 720918, 2, 0, 720919, 3, 0, 720936, 2, 0, 720937, 2, 0, 786443, 3, 0, 786455, 3, 0, 851979, 3, 0, 851991, 3, 0, 917515, 3, 0, 917527, 3, 0, 917535, 3, 0, 983051, 3, 0, 983063, 3, 0, 983071, 2, 0, 983072, 3, 0, 1048587, 3, 0, 1048599, 3, 0, 1048608, 3, 0, 1114123, 3, 0, 1114135, 3, 0, 1114144, 3, 0, 1179659, 1, 0, 1179671, 1, 0, 1179680, 1, 0, 1376267, 1, 0, 1376279, 1, 0, 1376288, 1, 0, 1441803, 3, 0, 1441815, 3, 0, 1441824, 3, 0, 1507339, 3, 0, 1507351, 3, 0, 1507360, 3, 0, 1572875, 3, 0, 1572887, 3, 0, 1572896, 3, 0, 1638411, 3, 0, 1638423, 3, 0, 1638431, 3, 0, 1638432, 2, 0, 1703947, 3, 0, 1703959, 3, 0, 1703967, 2, 0, 1769483, 3, 0, 1769494, 3, 0, 1769495, 2, 0, 1835019, 2, 0, 1835020, 3, 0, 1835030, 2, 0, 1900556, 2, 0, 1900592, 3, 0, 1900593, 3, 0, 1966128, 2, 0, 1966129, 2, 0, 2228242, 3, 0, 2228243, 3, 0, 2293778, 2, 0, 2293779, 2, 0 )
 
 [node name="Area2D_win_place" type="Area2D" parent="."]
 position = Vector2( 2558.39, 933.366 )
 collision_layer = 4
-__meta__ = {
-"_edit_group_": true
-}
+script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_win_place"]
 shape = SubResource( 1 )
 
 [node name="Puerta con laseres" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1077.92, 574.406 )
+position = Vector2( 550.658, 958.84 )
+
+[node name="Puerta con laseres2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1126.42, 958.493 )
+habilited = false
+
+[node name="Puerta con laseres3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1558.83, 958.649 )
 
 [node name="Camara vigilancia" parent="." instance=ExtResource( 7 )]
-position = Vector2( 774.457, 799.224 )
+position = Vector2( 908.769, 1647.53 )
+
+[node name="Camara vigilancia2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 915.644, 219.303 )
+orientacion = 3.142
+
+[node name="Camara vigilancia3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2351, 1407.11 )
+
+[node name="Camara vigilancia4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1964.28, 494.524 )
+orientacion = 3.142
 
 [node name="Jugador" parent="." instance=ExtResource( 4 )]
 
+[node name="Dron" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2466.5, 715.116 )
+
+[node name="Dron2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1809.64, 1601.08 )
+hacia_arriba = false
+
+[node name="Dron3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2474.99, 1153.52 )
+hacia_adelante = false
+
+[node name="Dron4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1805.86, 302.309 )
+hacia_arriba = false
+
 [node name="Camera and UI" parent="." instance=ExtResource( 3 )]
 
-[connection signal="body_entered" from="Area2D_win_place" to="." method="_on_Area2D_win_place_body_entered"]
+[connection signal="body_entered" from="Area2D_win_place" to="Area2D_win_place" method="_on_Area2D_win_place_body_entered"]

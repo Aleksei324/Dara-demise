@@ -8,20 +8,20 @@ radius = 29.9675
 height = 24.5807
 
 [node name="Jugador" type="Node2D"]
-position = Vector2( 65, 725 )
+position = Vector2( 105, 910 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
-collision_mask = 10
+collision_mask = 26
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = ExtResource( 1 )
 animation = "derecha"
-frame = 1
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]

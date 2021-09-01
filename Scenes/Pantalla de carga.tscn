@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Pantalla de carga.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Saves/Textbox_fuente.tres" type="DynamicFont" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.901961, 0, 1, 0.784314 )
@@ -13,8 +14,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Audio_train" type="AudioStreamPlayer" parent="."]
-
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Panel_fondo" type="Panel" parent="."]
@@ -24,20 +23,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel_fondo"]
+[node name="MarginContainer_text" type="MarginContainer" parent="Panel_fondo"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -561.0
-margin_top = 456.0
-margin_right = 561.0
-margin_bottom = 490.0
+margin_left = -365.5
+margin_top = -130.5
+margin_right = 365.5
+margin_bottom = 130.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ProgressBar" type="ProgressBar" parent="Panel_fondo/MarginContainer"]
+[node name="Label" type="Label" parent="Panel_fondo/MarginContainer_text"]
+margin_right = 731.0
+margin_bottom = 261.0
+size_flags_vertical = 5
+custom_fonts/font = ExtResource( 2 )
+text = "Te necesita"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="MarginContainer_progress" type="MarginContainer" parent="Panel_fondo"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -561.0
+margin_top = -77.4182
+margin_right = 561.0
+margin_bottom = -43.4182
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel_fondo/MarginContainer_progress"]
 margin_right = 1122.0
 margin_bottom = 34.0
 size_flags_vertical = 1

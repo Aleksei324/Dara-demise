@@ -4,13 +4,14 @@ extends Control
 # Declare member variables here.
 onready var container_vagones = $MarginContainer_minimapa/VBoxContainer/HBoxContainer_vagones
 onready var label = $MarginContainer_minimapa/VBoxContainer/Label_total_vagones
-onready var boton1 = $MarginContainer_items/VBoxContainer/Panel_items/HBoxContainer/TextureButton_taser
-onready var boton2 = $MarginContainer_items/VBoxContainer/Panel_items/HBoxContainer/TextureButton2
-onready var boton3 = $MarginContainer_items/VBoxContainer/Panel_items/HBoxContainer/TextureButton3
+onready var boton1 = $MarginContainer_items/VBoxContainer/Panel_items/HBoxContainer/TextureButton_pulso
+onready var boton2 = $MarginContainer_items/VBoxContainer/Panel_items/HBoxContainer/TextureButton_controller
+onready var boton3 = $MarginContainer_items/VBoxContainer/Panel_items/HBoxContainer/TextureButton_extra
 onready var label_item = $MarginContainer_items/VBoxContainer/Label_item
+onready var label_municion = $MarginContainer_items/VBoxContainer/Label_municion
 export (PackedScene) var vagon # añade la escena llamada "vagon minimapa.tscn" como objeto
 var temp # variable temporal para el bucle for
-var item_actual = "Taser"
+var item_actual = "Pulso electromagnetico"
 
 
 func _ready():
@@ -23,48 +24,38 @@ func _ready():
 
 
 func _input(event):
-	# si se presiona la tecla X, cambia el estado de visibilidad de este menu
-	if event.is_action_pressed("ex"):
+	# si se presiona la tecla X, se activa este menu
+	if event.is_action_pressed("ex") and not Global_variables.textbox_activo:
+		Global_variables.items_menu_activo = true
 		visible = true
 
 		if boton1.has_focus():
 			$Audio_button.play()
-			label_item.set_text("Boton 2")
+			label_item.set_text("Corruptor de comandos")
 			boton2.grab_focus()
 
 		elif boton2.has_focus():
 			$Audio_button.play()
-			label_item.set_text("Boton 3")
+			label_item.set_text("Manta")
 			boton3.grab_focus()
 
 		elif boton3.has_focus():
 			$Audio_button.play()
-			label_item.set_text("Taser")
+			label_item.set_text("Pulso electromagnetico")
 			boton1.grab_focus()
 
 		# si ninguno tiene focus, dar focus al ultimo item
 		else:
 			label_item.set_text(item_actual)
-			
-			if item_actual == "Taser":
+
+			if item_actual == "Pulso electromagnetico":
 				boton1.grab_focus()
-				
-			elif item_actual == "Boton 2":
+
+			elif item_actual == "Corruptor de comandos":
 				boton2.grab_focus()
-				
+
 			else:
 				boton3.grab_focus()
-
-
-func nivel_completado():
-	Global_variables.vagon_actual += 1
-	update_icon_minimap()
-
-
-func nivel_fallado():
-	add_vagon()
-	update_vagones_totales()
-	update_icon_minimap()
 
 
 func update_vagones_totales():
@@ -94,10 +85,26 @@ func update_icon_minimap():
 			temp.set_icono_activo(false)
 
 
+func actualizar_label_municion():
+	label_municion.text = str(Global_variables.municion) + " usos"
+
+
 func boton_presionado():
 	item_actual = label_item.get_text()
 	visible = false
+	Global_variables.items_menu_activo = false
 
 
 func _on_TextureButton_taser_button_up():
+	Global_variables.gun_mode = 0
+	boton_presionado()
+
+
+func _on_TextureButton_controller_button_up():
+	Global_variables.gun_mode = 1
+	boton_presionado()
+
+
+func _on_TextureButton_extra_button_up():
+	Global_variables.gun_mode = 2
 	boton_presionado()

@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Dron.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Enemies/Dron.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 160, 0, 160, 160 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 15.8928
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0, 0.142857, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.392157, 1, 1, 1, 0.588235 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 52.5552
+
+[node name="Dron" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 0, -150 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 0, -147.583 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="KinematicBody2D"]
+collision_layer = 8
+
+[node name="Polygon2D" type="Polygon2D" parent="KinematicBody2D/Area2D"]
+texture = SubResource( 6 )
+texture_offset = Vector2( 200, 0 )
+texture_rotation_degrees = -90.0
+polygon = PoolVector2Array( -11.7289, -149.165, -55.9234, -11.591, -57.2598, -0.232063, -56.446, 11.0158, -53.5921, 21.0913, -49.6236, 29.4252, -43.6708, 37.759, -36.9244, 44.5055, -28.4144, 50.3936, -20.4054, 54.3981, -12.0467, 56.7855, 0.203186, 58.3445, 10.9634, 57.7352, 21.8094, 54.4268, 30.986, 48.3913, 39.6624, 41.7171, 47.6715, 32.3732, 52.7662, 22.2631, 56.3479, 9.68097, 57.6661, -0.00933838, 55.8843, -11.8137, 11.6308, -149.165 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
+shape = SubResource( 7 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="KinematicBody2D/Area2D" to="." method="_on_Area2D_body_entered"]

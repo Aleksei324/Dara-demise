@@ -8,12 +8,12 @@ export (bool) var mueve_a_derecha = true # true si rota hacia la derecha
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_to_group("Enemies")
 	set_rotation(orientacion)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# se encarga de rotar la camara correctamente
 	if mueve_a_derecha:
 		if get_rotation() < orientacion + PI/6:
 			rotation += 0.1 * delta

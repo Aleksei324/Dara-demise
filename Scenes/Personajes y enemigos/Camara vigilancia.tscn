@@ -3,14 +3,14 @@
 [ext_resource path="res://Scripts/Camara vigilancia.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Enemies/Camera.png" type="Texture" id=2]
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.153846, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.392157, 1, 1, 1, 0.588235 )
 
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 13.6882
 height = 21.8048
 
@@ -24,13 +24,13 @@ __meta__ = {
 collision_layer = 8
 
 [node name="Polygon2D_cuerpo" type="Polygon2D" parent="Area2D_detection_area"]
-texture = SubResource( 3 )
+texture = SubResource( 2 )
 texture_offset = Vector2( 600, 0 )
 texture_rotation_degrees = -90.0
 polygon = PoolVector2Array( 0.0864544, -5.21137, 201.568, -606.945, -198.457, -606.945 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D_detection_area"]
-polygon = PoolVector2Array( -0.0316162, -37.068, 187.282, -594.246, -182.583, -595.833 )
+polygon = PoolVector2Array( -0.0316162, -37.068, 182.385, -580.863, -176.791, -580.965 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 8
@@ -40,6 +40,6 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [connection signal="body_entered" from="Area2D_detection_area" to="." method="_on_Area2D_detection_area_body_entered"]

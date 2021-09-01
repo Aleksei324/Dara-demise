@@ -18,7 +18,6 @@ visible = false
 [node name="Botones interfaz" parent="CanvasLayer" instance=ExtResource( 1 )]
 
 [node name="Textbox" parent="CanvasLayer" instance=ExtResource( 3 )]
-visible = false
 
 [node name="Items menu" parent="CanvasLayer" instance=ExtResource( 4 )]
 visible = false
@@ -36,8 +35,5 @@ limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
-drag_margin_left = 0.5
-drag_margin_top = 0.5
-drag_margin_bottom = 0.5
 
 [connection signal="visibility_changed" from="CanvasLayer/Items menu" to="." method="_on_Items_menu_visibility_changed"]

@@ -36,9 +36,11 @@ func run_textbox():
 	if texto_queue.empty():
 		textbox_container.hide()
 		acabado = true
+		Global_variables.textbox_activo = false
 
 	# sino, muestra la textbox y saca el primer texto del array
 	else:
+		Global_variables.textbox_activo = true
 		acabado = false
 		textbox_container.show()
 		texto_actual = texto_queue.pop_front()
