@@ -1,8 +1,34 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/UI/Textbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Cinematica final.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
 
 [node name="Cinematica final" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Panel_fondo" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Textbox" parent="." instance=ExtResource( 1 )]
+margin_left = -364.0
+margin_top = 424.0
+margin_right = -364.0
+margin_bottom = 424.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

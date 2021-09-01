@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Fonts/Kenney Rocket Square.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Creditos.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Backgrounds/fondo_titulo.png" type="Texture" id=3]
 [ext_resource path="res://Sounds/Kenney_button_press.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Fonts/Saves/Titulo_menu_fuente.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Sounds/Music/inspired-by-kevin-macleod-from-filmmusic-io.mp3" type="AudioStream" id=7]
@@ -40,6 +41,9 @@ volume_db = -10.0
 [node name="imagen_fondo" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -62,6 +66,7 @@ __meta__ = {
 margin_right = 1335.0
 margin_bottom = 150.0
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.901961, 0, 1, 1 )
 text = "Dara's demise"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -87,7 +92,7 @@ margin_bottom = 346.0
 custom_styles/focus = SubResource( 3 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_hover = Color( 0.901961, 0, 1, 1 )
-text = "Creditos"
+text = "Créditos"
 flat = true
 
 [node name="Button_salir" type="Button" parent="VBoxContainer"]

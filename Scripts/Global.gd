@@ -2,7 +2,7 @@ extends Node
 
 
 # Declare member variables here.
-var vagones_totales = 4
+var vagones_totales = 3
 var vagon_actual = 0 # maneja el minimapa
 var nivel_actual = 0 # maneja las escenas
 

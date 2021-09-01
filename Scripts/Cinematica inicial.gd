@@ -5,14 +5,14 @@ extends Control
 func _ready():
 	$TextureRect.set_visible(false)
 	# texto que se mostrara en la textbox
-	$Textbox.queue_text("Dentro de poco el tren de prisioneros pasara por aqui")
-	$Textbox.queue_text("Es mi unica oportunidad, debo infiltrarme sin ser vista")
+	$Textbox.queue_text("Dentro de poco el tren de prisioneros pasará por aquí")
+	$Textbox.queue_text("Es mi única oportunidad, debo infiltrarme sin ser vista")
 	$Textbox.queue_text("Cada vez que me descubran el tren se hara más y más largo")
-	$Textbox.queue_text("No puedo permitirlo, debo llegar a ella a toda costa")
-	$Textbox.queue_text("Esos imbeciles creen que pueden hacer lo que quieran")
+	$Textbox.queue_text("No puedo permitirlo, debo llegar a ella")
+	$Textbox.queue_text("Se creen que pueden hacer lo que quieran")
 	$Textbox.queue_text("...")
 	$Textbox.queue_text("...")
-	$Textbox.queue_text("Es hora")
+	$Textbox.queue_text("Es el momento")
 	
 	# inicia el timer de un segundo
 	$Timer.start()

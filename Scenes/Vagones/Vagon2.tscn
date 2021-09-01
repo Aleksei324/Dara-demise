@@ -81,24 +81,29 @@ position = Vector2( 1333.42, 217.266 )
 orientacion = 3.142
 mueve_a_derecha = false
 
+[node name="Camara vigilancia6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1664.97, 1600.53 )
+mueve_a_derecha = false
+
 [node name="Municion" parent="." instance=ExtResource( 13 )]
 position = Vector2( 65.4071, 565.972 )
 
 [node name="Jugador" parent="." instance=ExtResource( 4 )]
 
 [node name="Dron" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2210.21, 932.693 )
+position = Vector2( 2409.77, 793.713 )
+hacia_adelante = false
 hacia_arriba = false
 
 [node name="Dron2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 256.006, 926.019 )
+position = Vector2( 266.697, 772.784 )
 hacia_arriba = false
 
 [node name="Dron3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 82.4772, 1638.82 )
+position = Vector2( 96.7315, 1489.15 )
 
 [node name="Dron4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1244.12, 1326.36 )
+position = Vector2( 949.589, 1486.83 )
 
 [node name="Camera and UI" parent="." instance=ExtResource( 3 )]
 

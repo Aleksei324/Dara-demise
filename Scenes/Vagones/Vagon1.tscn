@@ -78,18 +78,18 @@ orientacion = 3.142
 [node name="Jugador" parent="." instance=ExtResource( 4 )]
 
 [node name="Dron" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2466.5, 715.116 )
+position = Vector2( 2463.14, 536.846 )
 
 [node name="Dron2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1809.64, 1601.08 )
+position = Vector2( 1813, 1483.35 )
 hacia_arriba = false
 
 [node name="Dron3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2474.99, 1153.52 )
+position = Vector2( 2464.9, 1059.34 )
 hacia_adelante = false
 
 [node name="Dron4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1805.86, 302.309 )
+position = Vector2( 1809.22, 147.584 )
 hacia_arriba = false
 
 [node name="Camera and UI" parent="." instance=ExtResource( 3 )]

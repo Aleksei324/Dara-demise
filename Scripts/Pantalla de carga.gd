@@ -8,7 +8,6 @@ var textos_predefinidos = ["El corruptor mueve drones a tu posición",
 		"El pulso electromagnetico invierte los lasers",
 		"La manta es el mejor item del juego",
 		"Cuidado con que el tren se vuelva demasiado largo",
-		"Hazlo por ella",
 		"Te necesita"]
 
 
@@ -54,6 +53,4 @@ func _on_Tween_tween_completed(object, key):
 	elif Global_variables.nivel_actual == 2:
 		get_tree().change_scene("res://Scenes/Vagones/Vagon3.tscn")
 	elif Global_variables.nivel_actual == 3:
-		get_tree().change_scene("res://Scenes/Vagones/Vagon4.tscn")
-	elif Global_variables.nivel_actual == 4:
 		get_tree().change_scene("res://Scenes/Cinematica final.tscn")

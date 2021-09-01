@@ -11,7 +11,7 @@ onready var label_item = $MarginContainer_items/VBoxContainer/Label_item
 onready var label_municion = $MarginContainer_items/VBoxContainer/Label_municion
 export (PackedScene) var vagon # añade la escena llamada "vagon minimapa.tscn" como objeto
 var temp # variable temporal para el bucle for
-var item_actual = "Pulso electromagnetico"
+var item_actual = "Pulso electromagnético"
 
 
 func _ready():
@@ -41,14 +41,14 @@ func _input(event):
 
 		elif boton3.has_focus():
 			$Audio_button.play()
-			label_item.set_text("Pulso electromagnetico")
+			label_item.set_text("Pulso electromagnético")
 			boton1.grab_focus()
 
 		# si ninguno tiene focus, dar focus al ultimo item
 		else:
 			label_item.set_text(item_actual)
 
-			if item_actual == "Pulso electromagnetico":
+			if item_actual == "Pulso electromagnético":
 				boton1.grab_focus()
 
 			elif item_actual == "Corruptor de comandos":
